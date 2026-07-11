@@ -2,7 +2,7 @@ Linux Network Commands
 
 Syntax = ip [options] OBJECT {COMMAND | help}
 
-• **ip a** - Displays details such as int names, MAC addresses, ipv4 and ipv6 addresses, subnet masks and more.
+• <mark>**ip a**</mark> - Displays details such as int names, MAC addresses, ipv4 and ipv6 addresses, subnet masks and more.
 
 • **sudo ip addr add 192.168.x.x/24 dev eth0** - Adds the IP address 192.168.x.x with a subnet mask of 24 to the eth0 interface.
 
