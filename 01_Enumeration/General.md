@@ -4,7 +4,7 @@ Syntax = ip [options] OBJECT {COMMAND | help}
 
 • <mark>**ip a**</mark> - Displays details such as int names, MAC addresses, ipv4 and ipv6 addresses, subnet masks and more.
 
-• `**sudo ip addr add 192.168.x.x/24 dev eth0**` - Adds the IP address 192.168.x.x with a subnet mask of 24 to the eth0 interface.
+• **`sudo ip addr add 192.168.x.x/24 dev eth0`** - Adds the IP address 192.168.x.x with a subnet mask of 24 to the eth0 interface.
 
 • **sudo ip route delete 10.0.0.0/24 via 192.168.1.1 dev eth0** - Removes the route 10.0.0.0/24 network via the gateway 192.168.1.1 through the eth0 interface.
 
