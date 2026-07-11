@@ -35,4 +35,5 @@ Syntax = ip [options] OBJECT {COMMAND | help}
 Source: https://www.geeksforgeeks.org/linux-unix/ip-command-in-linux-with-examples/
 
 <img width="732" height="960" alt="image" src="https://github.com/user-attachments/assets/e2da8185-eb1a-49d9-8bcd-73f2bb439839" />
+
 Source:  https://wizardzines.com/comics/#:~:text=★%20wizard%20zines%20★,of%20the%20comics%20I%27ve%20published!
