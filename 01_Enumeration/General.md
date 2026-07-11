@@ -21,13 +21,17 @@ Syntax = ip [options] OBJECT {COMMAND | help}
 • ip monitor - Monitors and displays the state of devices, addresses, and routes continuously.
 
 • ip neighbour - Used to view the MAC address of the devices connected to your system.
+
    ◇ STALE: The neighbor is valid, but is probably already unreachable, so the kernel will try to check it at the first transmission.
+   
    ◇ REACHABLE: This means that the neighbor is valid and reachable.
+   
    ◇ DELAY: This means that a packet has been sent to the stable neighbor and the kernel is waiting for confirmation.
    
 • ip neighbour del (ip_add) dev interface - Deletes an ARP entry.
 
 • ip neighbour add (ip_add) dev interface - Adds an ARP entry.
+
 Source: https://www.geeksforgeeks.org/linux-unix/ip-command-in-linux-with-examples/
 
 <img width="732" height="960" alt="image" src="https://github.com/user-attachments/assets/e2da8185-eb1a-49d9-8bcd-73f2bb439839" />
