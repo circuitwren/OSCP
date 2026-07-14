@@ -1,7 +1,10 @@
 **NMAP**
 
-nmap -p 1-100 10.129.55.80
 
+1. nmap -sn 192.168.x.0/24
+2. nmap -v -p- 192.168.29.143 -o open-ports.txt
+   * nmap -p 1-100 10.129.55.80
+3. nmap -v -sV -p 22  192.168.29.143
 
 **Linux Network Commands**
 
