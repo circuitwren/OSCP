@@ -1,3 +1,8 @@
+**NMAP**
+
+nmap -p 1-100 10.129.55.80
+
+
 **Linux Network Commands**
 
 Syntax = ip [options] OBJECT {COMMAND | help}
