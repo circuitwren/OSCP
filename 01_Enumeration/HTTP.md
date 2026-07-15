@@ -2,5 +2,6 @@
 `sudo echo "x.x.x.x www.example.com" >> /etc/hosts`
 This will map the IP to the relevant hostname.
 
-#Gobuster
+## Gobuster
+
 `gobuster dir -u https://example.com -w /path/to/wordlist.txt`
