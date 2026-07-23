@@ -1,10 +1,7 @@
 **NMAP**
 
-
-1. nmap -sn 192.168.x.0/24
-2. nmap -v -p- 192.168.29.143 -o open-ports.txt
-   * nmap -p 1-100 10.129.55.80
-3. nmap -v -sV -p 22  192.168.29.143
+1. Terminal 1 (TCP): `sudo nmap -p- --min-rate 3000 --open -Pn -oG all-tcp.gnmap <TARGET-IP>`
+2. Terminal 2 (UDP): `sudo nmap -sU --top-ports 200 --min-rate 1000 -Pn -oN udp-top200.txt <TARGET-IP>`
 
 **Linux Network Commands**
 
