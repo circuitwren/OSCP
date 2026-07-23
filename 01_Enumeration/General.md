@@ -1,7 +1,7 @@
 **NMAP**
 
 1. Terminal 1 (TCP): `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap <TARGET-IP>`
-2. Terminal 2 (UDP): `sudo nmap -sU --top-ports 200 --min-rate 1000 -Pn -oN [CHOSEN FILE PATH]udp-top200.txt <TARGET-IP>`
+2. Terminal 2 (UDP): `sudo nmap -sU --top-ports 200 --min-rate 1000 -Pn -oN [CHOSEN FILE PATH]/udp-top200.txt <TARGET-IP>`
 
 **Linux Network Commands**
 
