@@ -1,3 +1,7 @@
+**Set IP**
+1. `export IP="<TARGET IP>"`
+2. Everytime you need to type the IP in the terminal simply use `$IP`. Example: `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap **$IP**`
+
 **NMAP**
 
 1. Terminal 1 (TCP): `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap <TARGET-IP>`
