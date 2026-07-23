@@ -51,7 +51,7 @@ umount -f -l /mnt/nfs
 
 ## Permission Denied ?
 
-<https://blog.christophetd.fr/write-up-vulnix/>
+link: https://blog.christophetd.fr/write-up-vulnix/
 
 ## Further Exploitation
 
