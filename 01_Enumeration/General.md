@@ -2,9 +2,7 @@
 1. `export IP="<TARGET IP>"`
 2. Everytime you need to type the IP in the terminal simply use `$IP`.
 
-
-   Example: `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap $IP`
-
+Example: `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap $IP`
 
 NOTE: This does not carry over into each terminal. This must be scripted into each tmux window initally.
 
