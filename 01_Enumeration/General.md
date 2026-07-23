@@ -1,10 +1,11 @@
 **Set IP**
-1. `export IP="<TARGET IP>"`
-2. Everytime you need to type the IP in the terminal simply use `$IP`.
+Everytime you need to type the IP in the terminal simply use `$IP` by running `export IP="<TARGET IP>"` as the very first command. Then, any command that requires that target IP can be substitued with `$IP`
 
 Example: `sudo nmap -p- --min-rate 3000 --open -Pn -oG [CHOSEN FILE PATH]/all-tcp.gnmap $IP`
 
-NOTE: This does not carry over into each terminal. This must be scripted into each tmux window initally.
+Note that I wrote $IP at the end of the command where I would typically copy/paste or manually type the IP I needed in. Now I can run the commands I need more quickly and leave less room for manual error.
+
+NOTE: This command does not carry over into each terminal. This must be scripted into each tmux window initally.
 
 **NMAP**
 
