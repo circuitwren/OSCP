@@ -10,6 +10,7 @@
 
 ## Where are we looking?
 |  Resource  |  Examples  |
+|  --------  |  --------  |
 |  ASN/IP registrars  |  IANA, arin for searching the Americas, RIPE for searching in Europe, BGP Toolkit.  |
 | Domain Registrars & DNS  |  Domaintools, PTRArchive, ICANN, manual DNS record requests against the domain in question or against well known DNS servers, such as 8.8.8.8.  |
 |  Social Media  |  Searching Linkedin, Twitter, FB, the region's major social media sites, news articles, and any relevant info you can find about the org. It's like you're making a malevolent scrapbook.  |
