@@ -15,7 +15,7 @@
 |       rpcclient       |  A part of the Samba suite on Linux distros that can be used to perform a variety of AD enum tasks via the remote RPC service.  |
 |   CrackMapExec (CME)  |  CME is an enum, attack, and post-exploit toolkit which can help greatly in enum and performing attacks with the data we gather. CME attempts to "Live off the land" and abuse built-in features and protocols like SMB, WMI, WinRM, and MSSQL.  |
 |         Rubeus        |  A C# tool built for Kerberos Abuse  |
-|     GetUserSPNs.py    |  An Impacket module geared towards finding Service Principal names tied to normal users. DO NOT USE ON THE OSCP.  |
+|     GetUserSPNs.py    |  An Impacket module geared towards finding Service Principal names tied to normal users.  |
 |        Hashcat        |  A great hash cracking and password recovery tool.  |
 |       enum4linux      |  A tool for enumerating information from Windows and Samba systems.  |
 |     enum4linux-ng     |  A rework of the OG Enum4linux tool that works a bit differently.  |
@@ -27,3 +27,26 @@
 |       psexec.py       |  Part of the Impacket toolkit, it provides us with Psexec-Like functionality in the form of a semi-interactive shell.  |
 |       wmiexec.py      |  Part of the Impacket toolkit, it provides the capability of command execution over WMI.  |
 |        Snaffler       |  Useful for finding information (such as credentials) in AD on computers with accessible file shares.  |
+|      smbserver.py     |  Simple SMB server execution for interaction with Windows hosts. Easy way to transfer files within a network.  |
+|       setspn.exe      |  Adds, reads, modifies and deletes the Service Principal Names (SPN) directory property for an AD service account.  |
+|  Mimikatz  | Performs many functions. Notably, pass-the-hash attacks, extracting plaintext passwords, and Kerberos ticket extraction from memory on a host.  |
+|     secretsdump.py    |  Remotely dump SAM and LSA secrets from a host.  |
+|       evil-winrm      |  Provides us with an interactive shell on a host over the WinRM protocol.  |
+|     mssqlclient.py    |  Part of the Impacket toolkit, it provides the ability to interact with MSSQL databases.  |
+|        noPac.py       |  Exploit combo using CVE-2021-42278 and CVE-2021-42287 to impersonate DA from standard domain user.  |
+|       rpcdump.py      |  Part of the Impacket toolset, RPC endpoint mapper.  |
+|    CVE-2021-1675.py   |  Printnightmare PoC in python.  |
+|     ntlmrelayx.py     |  Part of the Impacket toolset, it performs SMB relay attacks.  |
+|     PetitPotam.py     |  PoC tool for the CVE-2021-36942 to coerce Windows hosts to authenticate to other machines via MS-EFSRPC EfsRpcOpenFileRaw or other functions.  |
+|    gettgtpkinit.py    |  Tool for manipulating certificates and TGTs.  |
+|      getnthash.py     |  This tool will use an existing TGT to request a PAC for the current user using U2U.  |
+|       adidnsdump      |  A tool for enumerating and dumping DNS records from a domain. Similar to performing a DNS zone transfer.  |
+|      gpp-decrypt      |  Extracts usernames and passwords from Group Policy preferences files.  |
+|     GetNPUsers.py     |  Part of the Impacket toolkit. Used to perform the ASREPRoasting atack to list and obtain AS-REP hashes for users with the 'Do not require Kerberos preauthentication' set. These hashes are then ded into a tool such as Hashcat for attempts at offline password cracking.  |
+|      lookupsid.py     |  SID bruteforcing tool.  |
+|      ticketer.py      |  A tool for creation and customization of TGT/TGS tickets. It can be used for Golden Ticket creation, child to parent trust attacks, etc.  |
+|     raiseChild.py     |  Part of the Impacket toolkit, It is a tool for automated child to parent domain escalation.  |
+|  Active Directory Explorer  |  AD Explorer is an AD viewer and editor. It can be used to navigate an AD database and view object properties and attributes. It can also be used to save a snapshot of an AD database for offline analysis. When an AD snapshot is loaded, it can be explored as a live version of the database. It can also be used to compare two AD database snapshots to see changes in objects, attributes, and security permissions. Triggers less security warnings than BloodHound or SharpHound. Snapshots from AD Explorer can be uploaded to BloodHound outside of the environment for more subtle analysis later.  |
+|       PingCastle      |  Used for auditing the security level of an AD environment based on a risk assessment and maturity framework (based on CMMI adapted to AD security).  |
+|         Group3r       |  Group3r is useful for auditing and finding security misconfigurations in AD GPO's.  |
+|         ADRecon       |  A tool used to extract various data from a target AD environment. The data can be output in Microsoft Excel format with summary views and analysis to assist with analysis and paint a picture of the environment's overall security state.  |
