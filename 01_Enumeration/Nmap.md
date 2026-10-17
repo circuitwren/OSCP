@@ -44,6 +44,23 @@ Scan Options:
 -sZ (SCTP COOKIE ECHO scan)
   This is a more advanced SCTP scan. It takes advantage of the fact that SCTP implementations should silently drop packets containing COOKIE ECHO chunks on open ports but sends ABORT if the port is closed. Again, SCTP is not used in AD implementations and can be disregarded for the purpose of this test.
 
+-sI zombiehost[:<probeport>] (idle scan - ULTIMATE STEALTH)
+  This method allows for a truly blind TCP port scan of the target (meaning no packets are sent to the target from your real IP address). Instead, a unique side-channel attack exploits predictable IP fragmentation ID sequence generation on the zombie hosts to glean information about the open ports on the target. IDS systems will display the scan as coming from the zombie machine you specify (which must be up and meet certain criteria).
+
+The first step in executing an IP ID idle scan is to find an appropriate zombie. It needs to assign IP ID packets incrementally on a global (rather than per-host it communicates with) basis. It should be idle (hence the scan name), as extraneous traffic will bump up its IP ID sequence, confusing the scan logic. The lower the latency between the attacker and the zombie, and between the zombie and the target, the faster the scan will proceed.
+
+When an idle scan is attempted, Nmap tests the proposed zombie and reports any problems with it. If one doesn't work, try another. Enough Internet hosts are vulnerable that zombie candidates aren't hard to find. Since the hosts need to be idle, choosing a well-known host such as www.yahoo.com or google.com will almost never work.
+
+A common approach is to simply execute a Nmap ping scan of some network. You could use Nmap's random IP selection mode (-iR), but that is likely to result in far away zombies with substantial latency. Choosing a network near your source address, or near the target, produces better results. You can try an idle scan using each available host from the ping scan results until you find one that works. As usual, it is best to ask permission before using someone's machines for unexpected purposes such as idle scanning.
+
+Printers and other simple network devices often make great zombies because they are commonly both underused (idle) and built with simple network stacks which are vulnerable to IP ID traffic detection.
+
+-sO (IP protocol scan)
+IP protocol scan allows us to determine which IP protocols (TCP, ICMP, IGMP, etc.) are supported by the target machines. This isn't technically a port scan, since it cycles through IP protocol numbers rather than TCP or UDP port numbers. This works in a similar fashion to the UDP scan. Instead of iterating through the port number field of a UDP packet, it sends IP packet headers and iterates through the eight-bit IP protocol field.
+
+-b <FTP relay host>  (FTP bounce scan)
+An interesting feature of the FTP protocol is support for the so-called proxy FTP connections. This allows a user to connect to one FTP server, then ask that files be sent to a third-party server. Such a feature is ripe for abuse on many levels, so most servers have ceased supporting it. One of the abuses this features allows is causing the FTP server to port scan other hosts. Simply ask the FTP server to send a file to each interesting port of a target host in turn. The error message will describe whether the port is open or not. This is a good way to bypass firewalls because organizational FTP servers are often placed where they have more access to other internal hosts than any old Internet host would. Nmap supports FTP bounce scan with the -b option. It takes an argument of the form <username>:<password>@<server>:<port>. <Server> is the name or IP address of a vulnerable FTP server. As with a normal URL you may omit <username>:<password>, in which case anonymous login creds are used. The port number (and preceding colon) may be omitted as well, in which case the default FTP port (21) on <server> is used. This is worth trying if all else fails.
+
 Once we identify the services running on ports identified from the Nmap scan, the next step is to look if any of the apps/services have public exploits. 
 
 Ex: Google search "windows 7 smb exploit"
