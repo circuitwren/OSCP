@@ -61,6 +61,37 @@ IP protocol scan allows us to determine which IP protocols (TCP, ICMP, IGMP, etc
 -b <FTP relay host>  (FTP bounce scan)
 An interesting feature of the FTP protocol is support for the so-called proxy FTP connections. This allows a user to connect to one FTP server, then ask that files be sent to a third-party server. Such a feature is ripe for abuse on many levels, so most servers have ceased supporting it. One of the abuses this features allows is causing the FTP server to port scan other hosts. Simply ask the FTP server to send a file to each interesting port of a target host in turn. The error message will describe whether the port is open or not. This is a good way to bypass firewalls because organizational FTP servers are often placed where they have more access to other internal hosts than any old Internet host would. Nmap supports FTP bounce scan with the -b option. It takes an argument of the form <username>:<password>@<server>:<port>. <Server> is the name or IP address of a vulnerable FTP server. As with a normal URL you may omit <username>:<password>, in which case anonymous login creds are used. The port number (and preceding colon) may be omitted as well, in which case the default FTP port (21) on <server> is used. This is worth trying if all else fails.
 
+# Port Specification and Scan Order
+
+-p <port ranges> (Only scan specified ports)
+  ex: 1-1023 will scan ports 1-1023
+  ex: -p- will scan all ports (time consuming)
+  
+  When scanning a combination of protocols (TCP and UDP), you can specify a particular protocol by preceding the port numbers by T: TCP, U: UDP, S: SCTP, P: IP Protocol. Note that to scan both UDP and TCP, you have to specify -sU and at least one TCP scan type such as -sS, -sF, or -sT. If no protocol filter qualifier is given, the port numbers are added to all protocol lists.
+
+  Ports can also be specified by name according to what the port is referred to in the nmap-services. You can even use the wildcards * and ? with the names. For example, to scan FTP and all ports whose names begin with "http", use -p ftp,http*.
+
+  Ranges of ports can be surrounded by square brackets to indicate ports inside that range that appear in nmap-services. For example, the following will scan all ports in nmap-services equal to or below 1024: -p [-1024].
+
+--exclude-ports <port ranges> 
+  Self-explanatory,
+
+-F (Fast (limited port) scan)
+  Specifies that you wish to scan fewer ports than the default. Normally Nmap scans the most common 1,000 ports for each scanned protocol. With -F, this is reduced to 100.
+
+# Service and Version Detection
+-sV (Version detection)
+  Enables version detection.
+
+# OS Detection
+-O (Enable OS detection)
+  Enables OS detection.
+
+# NMAP scripting engine (NSE)
+The NSE allows users to write and share simple scripts written in the Lua programming language to automate a wide variety of networking tasks.
+-sC 
+  Performs a script scan using the default set of scripts. It is equivalent to --script=default. Some of the scripts in this category are considered intrusive and should not be run against a target network without permission.
+
 Once we identify the services running on ports identified from the Nmap scan, the next step is to look if any of the apps/services have public exploits. 
 
 Ex: Google search "windows 7 smb exploit"
