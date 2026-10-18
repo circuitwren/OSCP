@@ -15,3 +15,7 @@ The `rlwrap` part is important because it lets you use your arrow keys inside th
 | Flag | Description |
 | :--- | :---------- |
 | -l | Listen mode, to wait for a connection to connect to us. |
+| -v | Verbose mode, so that we know when we receive a connection. |
+| -n | Disable DNS resolution and only connect from/to IPs, to speed up the connection. |
+| -p 4444 | Port number netcat is listening on, and the reverse connection should be send to. |
+
