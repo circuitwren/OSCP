@@ -1,5 +1,7 @@
 Since Nmap is free, the only barrier to port scanning mastery is knowledge.
 
+https://callmeks.github.io/nmap-command-builder/
+
 1. Most of the scan types are only available to privileged users.
 2. While Nmap attempts to produce accurate results, all of its insights are based on packets returned by the target machines (or firewalls in front of them). Such hosts may be untrustworthy and send responses intended to confuse or mislead.
 3. Port scan type options are of the form -s<_C_>, where <_C_> is a prominent character in the scan name, usually the first.
