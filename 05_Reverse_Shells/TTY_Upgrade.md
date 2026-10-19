@@ -5,9 +5,15 @@ Python example: python -c 'import pty; pty.spawn("/bin/bash")'
 ^ After running this command, we will hit ctrl+z to background our shell and get back on our local terminal, and input the following stty command.
 
 nc -lvnp 1234
+
 stty raw -echo
-fg <- Once we hit fg, it will bring back our netcat shell to the foreground. At this point, the terminal will show a blank line. We can hit enter again to get back to our shell or input reset and hit enter to bring it back. At this point, we would have a fully working TTY shell with command history and everything else.
+
+fg 
+
+Once we hit fg, it will bring back our netcat shell to the foreground. At this point, the terminal will show a blank line. We can hit enter again to get back to our shell or input reset and hit enter to bring it back. At this point, we would have a fully working TTY shell with command history and everything else.
+
 [enter]
+
 [enter]
 
 Python pty, stty raw -echo, and script-based shell stabilization commands.
