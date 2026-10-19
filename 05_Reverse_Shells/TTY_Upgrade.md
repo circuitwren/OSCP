@@ -16,4 +16,20 @@ Once we hit fg, it will bring back our netcat shell to the foreground. At this p
 
 [enter]
 
+We may notice that our shell does not cover the entire terminal. To fix this, we need to figure out a few variables. We can open another terminal window on our system, maximize the windows or use any size we want, and then input the following commands to get our variables:
+
+echo $TERM
+
+xterm-256color
+
+stty size
+
+Go back to the netcat shell and use the following command to correct them:
+
+export TERM=[OUTPUT]
+
+stty rows [FIRST NUMBER] columns [second number]
+
+Once we do that, we should have a netcat shell that uses the terminal's full features, just like an SSH connection.
+
 Python pty, stty raw -echo, and script-based shell stabilization commands.
