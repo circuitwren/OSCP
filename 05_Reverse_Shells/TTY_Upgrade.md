@@ -20,8 +20,6 @@ We may notice that our shell does not cover the entire terminal. To fix this, we
 
 echo $TERM
 
-xterm-256color
-
 stty size
 
 Go back to the netcat shell and use the following command to correct them:
